@@ -4,10 +4,24 @@ import { TextToSpeechClient } from '@google-cloud/text-to-speech';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { v2 } from '@google-cloud/translate';
 
+let credentials;
+const encodedCredentials = process.env.GCP_CREDENTIALS_BASE64;
+
+if (encodedCredentials) {
+  try {
+    // 1. Decode the Base64 string back to a JSON string
+    const decodedString = Buffer.from(encodedCredentials, 'base64').toString('utf-8');
+    // 2. Parse the JSON string into an object
+    credentials = JSON.parse(decodedString);
+  } catch (error) {
+    console.error("Failed to parse Base64 credentials:", error);
+  }
+}
+
 const { Translate } = v2;
-const translate = new Translate();
-const speechClient = new SpeechClient();
-const textToSpeechClient = new TextToSpeechClient();
+const speechClient = new SpeechClient({ credentials });
+const textToSpeechClient = new TextToSpeechClient({ credentials });
+const translate = new v2.Translate({ credentials });
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
