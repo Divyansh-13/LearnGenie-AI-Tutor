@@ -233,7 +233,7 @@ export function ChatWindow() {
             {isRoleplayMode ? (
               <>🎭 {selectedScenario ? `${selectedScenario.icon} ${selectedScenario.title}` : 'Choose Roleplay'} ✨</>
             ) : (
-              <>🧞‍♂️ SpeakGenie AI Tutor ✨</>
+              <>🧞‍♂️ LearnGenie AI Tutor ✨</>
             )}
             <span className="animate-bounce">🌟</span>
           </h1>
@@ -299,7 +299,7 @@ export function ChatWindow() {
                 {isRoleplayMode ? '🎭' : '🧞‍♂️'}
               </div>
               <h2 className="text-2xl font-bold text-purple-600 mb-2">
-                {isRoleplayMode ? 'Ready for Roleplay! 🎭' : 'Welcome to SpeakGenie! 🌟'}
+                {isRoleplayMode ? 'Ready for Roleplay! 🎭' : 'Welcome to LearnGenie! 🌟'}
               </h2>
               <p className="text-lg text-gray-600">
                 {isRoleplayMode 

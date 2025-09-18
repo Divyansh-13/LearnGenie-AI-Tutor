@@ -77,7 +77,7 @@ IMPORTANT ROLEPLAY GUIDELINES:
 Respond naturally in the same language (${languageCode}) as if you are really in this situation with the student.`;
     } else {
       // Regular tutoring mode prompt
-      prompt = `You are SpeakGenie, a friendly AI language tutor for children. A child said: "${transcribedText}" in ${languageCode}. 
+      prompt = `You are LearnGenie, a friendly AI language tutor for children. A child said: "${transcribedText}" in ${languageCode}. 
 
 Your reply should be:
 - Simple and encouraging
@@ -101,9 +101,10 @@ Respond naturally and helpfully.`;
     if (!ttsResponse.audioContent) {
         return new NextResponse(JSON.stringify({ error: 'Could not synthesize speech.' }), { status: 500 });
     }
+const audioBuffer = Buffer.from(ttsResponse.audioContent as Uint8Array);
 
     const responseData = new FormData();
-    responseData.append('audio', new Blob([ttsResponse.audioContent], { type: 'audio/mpeg' }));
+    responseData.append('audio', new Blob([audioBuffer], { type: 'audio/mpeg' }));
     responseData.append('textData', JSON.stringify({ user: transcribedText, ai: aiResponseText }));
 
     return new NextResponse(responseData);
