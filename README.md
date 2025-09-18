@@ -1,6 +1,6 @@
-# SpeakGenie AI Tutor 🗣️✨
+# LearnGenie AI Tutor 🗣️✨
 
-A real-time AI voice tutor for kids, built with Next.js and Google's AI stack. SpeakGenie offers a playful, gamified English learning experience through voice-based conversations and interactive roleplay scenarios. Children can practice real-life dialogues while receiving smart feedback and multilingual playback support.
+A real-time AI voice tutor for kids, built with Next.js and Google's AI stack. LearnGenie offers a playful, gamified English learning experience through voice-based conversations and interactive roleplay scenarios. Children can practice real-life dialogues while receiving smart feedback and multilingual playback support.
 
 ## 🎬 Demo Video
 [Click here to watch the demo](https://drive.google.com/file/d/1s40GtpLyOe0F8vAeMe_eBqCS0vjkfEel/view?usp=sharing)
@@ -39,7 +39,7 @@ A real-time AI voice tutor for kids, built with Next.js and Google's AI stack. S
 ### 1. Clone the Repository
 ```bash
 git clone <your-repository-url>
-cd speakgenie-ai-tutor
+cd LearnGenie-ai-tutor
 ```
 
 ### 2. Install Dependencies
@@ -88,7 +88,7 @@ The application will be available at `http://localhost:3000`.
 ## 📁 Project Structure
 
 ```
-speakgenie-ai-tutor/
+LearnGenie-ai-tutor/
 ├── app/
 │   ├── api/
 │   │   └── chat/
